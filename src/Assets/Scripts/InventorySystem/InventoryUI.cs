@@ -41,6 +41,11 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
+    public Item GetActiveItem()
+    {
+        return _inventory.ActiveItem;
+    }
+
     public void SetInventory(Inventory inventory)
     {
         _inventory = inventory;

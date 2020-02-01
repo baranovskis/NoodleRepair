@@ -265,7 +265,7 @@ PrefabInstance:
         type: 3}
       propertyPath: PaintObject
       value: 
-      objectReference: {fileID: -927199367670048503, guid: f611603483275d340970134d83b1c8eb,
+      objectReference: {fileID: 3425187047452592948, guid: 584aba1cc29a75a4ea29e64b798519e4,
         type: 3}
     - target: {fileID: 9104296642437049759, guid: 8946c9866bd16544eb5551b4bdd7af52,
         type: 3}
