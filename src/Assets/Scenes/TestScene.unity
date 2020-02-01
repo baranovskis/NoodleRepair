@@ -1044,6 +1044,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NoodleStages: []
+  GrinderStages: []
 --- !u!65 &677451997
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1656,6 +1657,7 @@ MonoBehaviour:
   - {fileID: 507349144}
   - {fileID: 900986898}
   - {fileID: 1737927884}
+  GrinderStages: []
 --- !u!65 &1000109770
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2204,6 +2206,7 @@ MonoBehaviour:
   - {fileID: 1749593656}
   - {fileID: 549624976}
   - {fileID: 982284710}
+  GrinderStages: []
 --- !u!65 &1316898764
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3604,6 +3607,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7e6bf2f2de4992b4ab78e628e2ce80ec, type: 2}
+    - target: {fileID: 4215744324743927072, guid: e088a9359393bee4d90e271e0c5ba390,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4224801822505238522, guid: e088a9359393bee4d90e271e0c5ba390,
         type: 3}
       propertyPath: m_IsActive
