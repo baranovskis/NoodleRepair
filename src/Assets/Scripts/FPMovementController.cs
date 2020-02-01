@@ -11,7 +11,7 @@ public class FPMovementController : MonoBehaviour
     [SerializeField] private float runSpeed;
     [SerializeField] private bool jumpingEnabled = true;
     [SerializeField] private float jumpSpeed;
-    [Range(0.0f, 0.5f)]
+    [Range(0.0f, 10.0f)]
     [SerializeField] private float fallRate;
     [SerializeField] private bool  slopLimitEnabled;
     [SerializeField] private float slopeLimit;
