@@ -48,8 +48,6 @@ public class InteractionManager : MonoBehaviour
                     FixPart(_raycaster.Hit.collider.gameObject);
                     break;
             }
-
-            _player.ArmsAnimator.SetTrigger("Punch");
         }
     }
 
@@ -60,8 +58,10 @@ public class InteractionManager : MonoBehaviour
         if (fixManager != null)
         {
             var fixablePart = gameObject.GetComponent<FixablePart>();
+
             if (fixablePart != null)
             {
+                _player.ArmsAnimator.SetTrigger("Swing");
                 fixManager.FixArea(fixablePart.FixableArea);
             }
         }
@@ -74,8 +74,10 @@ public class InteractionManager : MonoBehaviour
         if (fixManager != null)
         {
             var fixableArea = gameObject.GetComponent<FixableArea>();
+
             if (fixableArea != null)
             {
+                _player.ArmsAnimator.SetTrigger("Swing");
                 fixManager.FixArea(fixableArea);
             }
         }
@@ -84,8 +86,10 @@ public class InteractionManager : MonoBehaviour
     private void Interact(GameObject gameObject)
     {
         var interactableObject = gameObject.GetComponent<InteractableObject>();
+
         if (interactableObject != null)
         {
+            _player.ArmsAnimator.SetTrigger("Punch");
             interactableObject.Interact();
         }
     }
@@ -128,6 +132,7 @@ public class InteractionManager : MonoBehaviour
             });
         }
 
+        //_player.ArmsAnimator.SetTrigger("Punch");
         Destroy(_raycaster.Hit.collider.gameObject);
     }
 }

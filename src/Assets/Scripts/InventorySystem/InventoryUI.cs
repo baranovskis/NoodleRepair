@@ -18,8 +18,6 @@ public class InventoryUI : MonoBehaviour
     {
         _itemContainer = transform.Find("ItemContainer");
         _itemTemplate = _itemContainer.Find("ItemTemplate");
-
-        _inventory.OnItemChanged += _inventory_OnItemChanged;
     }
 
     private void _inventory_OnItemChanged(Item item)
@@ -46,6 +44,8 @@ public class InventoryUI : MonoBehaviour
     public void SetInventory(Inventory inventory)
     {
         _inventory = inventory;
+        _inventory.OnItemChanged += _inventory_OnItemChanged;
+
         DrawInventory();
     }
 
