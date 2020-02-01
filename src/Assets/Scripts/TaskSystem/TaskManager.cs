@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TaskManager : MonoBehaviour
 {
@@ -34,11 +35,34 @@ public class TaskManager : MonoBehaviour
             new RepairTask{ TaskText = "Test 3" }
         };
 
-        foreach(var task in CurrentTasks)
+        float modifier = 89f;
+
+        if (TaskObject != null)
         {
-            if (TaskObject != null)
+            foreach (var task in CurrentTasks)
             {
-                Instantiate(TaskObject, gameObject.transform);
+                var taskObject = Instantiate(TaskObject,
+                    gameObject.transform.position
+                    + transform.up * modifier,
+                    Quaternion.identity, gameObject.transform);
+
+                for (int i = 0; i < taskObject.transform.childCount; i++)
+                {
+                    Transform child = taskObject.transform.GetChild(i);
+                    if (child.tag == "TaskText")
+                    {
+                        var textComponent = child.GetComponent<Text>();
+                        textComponent.text = task.TaskText;
+                    }
+
+                    if (child.tag == "TaskCheck")
+                    {
+                        var imageComponent = child.GetComponent<Image>();
+                        imageComponent.enabled = task.IsFinished();
+                    }
+                }
+
+                        modifier -= 35f;
             }
         }
     }

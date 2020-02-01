@@ -9,6 +9,9 @@ TagManager:
   - Pickup
   - Hand
   - FixablePart
+  - TaskText
+  - TaskTick
+  - TaskCheckbox
   layers:
   - Default
   - TransparentFX

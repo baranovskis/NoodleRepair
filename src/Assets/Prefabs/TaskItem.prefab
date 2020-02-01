@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2963653719375731203}
   m_Layer: 5
   m_Name: Tick
-  m_TagString: Untagged
+  m_TagString: TaskTick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 2963653719509394588}
   m_Layer: 5
   m_Name: Check
-  m_TagString: Untagged
+  m_TagString: TaskCheckbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 2963653720757625381}
   m_Layer: 5
   m_Name: TaskText
-  m_TagString: Untagged
+  m_TagString: TaskText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
