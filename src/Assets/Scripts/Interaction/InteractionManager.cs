@@ -132,6 +132,18 @@ public class InteractionManager : MonoBehaviour
             });
         }
 
+        var paintCanObject = gameObject.GetComponent<PaintCan>();
+        if (paintCanObject != null)
+        {
+            var player = GetComponent<Player>();
+
+            player.InventoryUI.AddInventoryItem(new Item
+            {
+                Type = Item.ItemType.Paint,
+                IsStackable = true
+            });
+        }
+
         //_player.ArmsAnimator.SetTrigger("Punch");
         Destroy(_raycaster.Hit.collider.gameObject);
     }
