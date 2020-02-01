@@ -41,6 +41,7 @@ public class Inventory
 				}
 			}
 		}
+
 		_items.Add(newItem);
 	}
 	

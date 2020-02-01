@@ -11642,6 +11642,7 @@ MonoBehaviour:
   - {fileID: 1957107435}
   - {fileID: 267911769}
   - {fileID: 1713589114}
+  FixableName: Sofa
   GrinderStages: []
 --- !u!65 &1351184998
 BoxCollider:
@@ -15625,6 +15626,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1014390696}
     m_Modifications:
+    - target: {fileID: 4638999322942664648, guid: 6c980be02e054f84d982f26f681aa77e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6350831301823221424, guid: 6c980be02e054f84d982f26f681aa77e,
         type: 3}
       propertyPath: m_Name
@@ -15689,7 +15695,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 6c980be02e054f84d982f26f681aa77e, type: 3}
 --- !u!4 &1960873808 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 7960665066390174883, guid: 6c980be02e054f84d982f26f681aa77e,
+  m_CorrespondingSourceObject: {fileID: 4638999322942664648, guid: 6c980be02e054f84d982f26f681aa77e,
     type: 3}
   m_PrefabInstance: {fileID: 1960873807}
   m_PrefabAsset: {fileID: 0}
@@ -17271,6 +17277,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221898644083268399, guid: 4819f29c07138e84493fa8cb1460e944,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -150
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221898644083268399, guid: 4819f29c07138e84493fa8cb1460e944,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -150
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221898644083268399, guid: 4819f29c07138e84493fa8cb1460e944,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221898644083268399, guid: 4819f29c07138e84493fa8cb1460e944,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221898644083268399, guid: 4819f29c07138e84493fa8cb1460e944,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221898644083268399, guid: 4819f29c07138e84493fa8cb1460e944,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4221898644653252999, guid: 4819f29c07138e84493fa8cb1460e944,
         type: 3}

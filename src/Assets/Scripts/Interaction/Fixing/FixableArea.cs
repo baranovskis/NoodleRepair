@@ -1,14 +1,26 @@
-﻿using System;
+﻿using Assets.Scripts.Interaction.Fixing;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FixableArea : MonoBehaviour
+public class FixableArea : MonoBehaviour, IFixable
 {
     public FixableObjectStage FixableObjectStage { get; set; }
 
     [SerializeField]
     private GameObject[] NoodleStages;
+
+    public string Name
+    {
+        get
+        {
+            return FixableName;
+        }
+    }
+
+    [SerializeField]
+    private string FixableName;
 
     private int _noodlesPerStage = 1;
     private int _noodlesUsedCount = 0;
