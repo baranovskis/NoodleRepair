@@ -9,12 +9,38 @@ public class InventoryUI : MonoBehaviour
     private Transform _itemContainer;
     private Transform _itemTemplate;
 
+    public Sprite NormalSlot;
+    public Sprite ActiveSlot;
+
     public float ItemCellSize = 75f;
 
     private void Awake()
     {
         _itemContainer = transform.Find("ItemContainer");
         _itemTemplate = _itemContainer.Find("ItemTemplate");
+
+        _inventory.OnItemChanged += _inventory_OnItemChanged;
+    }
+
+    private void _inventory_OnItemChanged(Item item)
+    {
+        DrawInventory();
+    }
+
+    public void Update()
+    {
+        if (Input.GetAxis("Mouse ScrollWheel") != 0)
+        {
+            if (Input.GetAxis("Mouse ScrollWheel") > 0)
+            {
+                _inventory.SelectNextItem();
+            }
+
+            if (Input.GetAxis("Mouse ScrollWheel") < 0)
+            {
+                _inventory.SelectPrevItem();
+            }
+        }
     }
 
     public void SetInventory(Inventory inventory)
@@ -26,6 +52,12 @@ public class InventoryUI : MonoBehaviour
     public void AddInventoryItem(Item item)
     {
         _inventory.AddItem(item);
+        DrawInventory();
+    }
+
+    public void UseInventoryItem(Item item)
+    {
+        _inventory.UseItem(item);
         DrawInventory();
     }
 
@@ -47,7 +79,6 @@ public class InventoryUI : MonoBehaviour
             }
         }
 
-
         var items = _inventory.GetItems();
         float pos = items.Count / 2f * -1f;
 
@@ -60,6 +91,9 @@ public class InventoryUI : MonoBehaviour
 
             var icon = itemRect.Find("Icon").GetComponent<Image>();
             icon.sprite = item.GetSprite();
+
+            var bg = itemRect.Find("Bg").GetComponent<Image>();
+            bg.sprite = item == _inventory.ActiveItem ? ActiveSlot : NormalSlot;
 
             ++pos;
         }

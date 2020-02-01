@@ -2,8 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FixableArea : MonoBehaviour
+public class FixablePart : MonoBehaviour
 {
+    [SerializeField]
+    public FixableArea FixableArea;
+
+    [SerializeField]
+    public int FixOrder;
+
     public FixableObjectStage FixableObjectStage { get; set; }
 
     // Start is called before the first frame update

@@ -48,6 +48,8 @@ public class InteractionManager : MonoBehaviour
                     FixPart(_raycaster.Hit.collider.gameObject);
                     break;
             }
+
+            _player.ArmsAnimator.SetTrigger("Punch");
         }
     }
 
@@ -60,7 +62,7 @@ public class InteractionManager : MonoBehaviour
             var fixablePart = gameObject.GetComponent<FixablePart>();
             if (fixablePart != null)
             {
-                fixManager.FixPart(fixablePart);
+                fixManager.FixArea(fixablePart.FixableArea);
             }
         }
     }
@@ -74,8 +76,6 @@ public class InteractionManager : MonoBehaviour
             var fixableArea = gameObject.GetComponent<FixableArea>();
             if (fixableArea != null)
             {
-                var collider = gameObject.GetComponent<BoxCollider>();
-                collider.enabled = false;
                 fixManager.FixArea(fixableArea);
             }
         }
