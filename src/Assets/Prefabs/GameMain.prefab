@@ -184,6 +184,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4958401606558234516}
     m_Modifications:
+    - target: {fileID: 9104296641311459981, guid: 8946c9866bd16544eb5551b4bdd7af52,
+        type: 3}
+      propertyPath: FixableObjectSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9943581300ef82648861c99edefa7eeb,
+        type: 3}
     - target: {fileID: 9104296641393544986, guid: 8946c9866bd16544eb5551b4bdd7af52,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -249,6 +255,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9104296642437049759, guid: 8946c9866bd16544eb5551b4bdd7af52,
+        type: 3}
+      propertyPath: Paint
+      value: 
+      objectReference: {fileID: 21300000, guid: e3afa01fa9fe4654caf088f0cfdde699,
+        type: 3}
+    - target: {fileID: 9104296642437049759, guid: 8946c9866bd16544eb5551b4bdd7af52,
+        type: 3}
+      propertyPath: PaintObject
+      value: 
+      objectReference: {fileID: -927199367670048503, guid: f611603483275d340970134d83b1c8eb,
+        type: 3}
+    - target: {fileID: 9104296642437049759, guid: 8946c9866bd16544eb5551b4bdd7af52,
+        type: 3}
+      propertyPath: GlueObject
+      value: 
+      objectReference: {fileID: 8519210253165829595, guid: 6c980be02e054f84d982f26f681aa77e,
+        type: 3}
     - target: {fileID: 9104296643156500965, guid: 8946c9866bd16544eb5551b4bdd7af52,
         type: 3}
       propertyPath: m_LocalPosition.z

@@ -27,18 +27,10 @@ public class FixableArea : MonoBehaviour
     private int _paintStageCount = 3;
     private int _paintUsedCount = 0;
 
-    // Glue stages will dim noodle texture.
-
     // Start is called before the first frame update
     void Start()
     {
         FixableObjectStage = FixableObjectStage.Damaged;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void FixWithNoodles()
@@ -79,6 +71,44 @@ public class FixableArea : MonoBehaviour
         }
     }
 
+    internal void FixWithGrinding()
+    {
+        if (FixableObjectStage == FixableObjectStage.FilledWithGlue)
+        {
+            int grindingStageCount = 1;
+
+            _grinderUsedCount++;
+
+            if (_grinderUsedCount % _grinderPerStage == 0)
+            {
+                DisplayGrindingStage();
+            }
+
+            if (_grinderUsedCount >= grindingStageCount * _grinderPerStage)
+            {
+                FixableObjectStage = FixableObjectStage.Grinded;
+            }
+        }
+    }
+
+    internal void FixWithPainting()
+    {
+        if (FixableObjectStage == FixableObjectStage.Grinded)
+        {
+            _paintUsedCount++;
+
+            if (_paintUsedCount % _paintPerStage == 0)
+            {
+                DisplayPaintStage(_paintUsedCount / _paintPerStage);
+            }
+
+            if (_paintUsedCount >= _paintStageCount * _paintPerStage)
+            {
+                FixableObjectStage = FixableObjectStage.Painted;
+            }
+        }
+    }
+
     private void DisplayNoodleStage(int noodleStage)
     {
         var noodle = NoodleStages[noodleStage - 1];
@@ -106,23 +136,9 @@ public class FixableArea : MonoBehaviour
         }
     }
 
-    internal void FixWithGrinding()
+    private void DisplayPaintStage(int paintingStage)
     {
-        if (FixableObjectStage == FixableObjectStage.FilledWithGlue)
-        {
-            int grindingStageCount = 1;
-
-            _grinderUsedCount++;
-
-            if (_grinderUsedCount % _grinderPerStage == 0)
-            {
-                DisplayGrindingStage();
-            }
-
-            if (_grinderUsedCount >= grindingStageCount * _grinderPerStage)
-            {
-                FixableObjectStage = FixableObjectStage.Grinded;
-            }
-        }
+        var noodle = NoodleStages[paintingStage - 1];
+        noodle.SetActive(true);
     }
 }

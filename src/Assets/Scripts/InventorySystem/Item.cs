@@ -6,7 +6,8 @@ public class Item
     {
         Glue,
         Noodle,
-        Tape
+        Tape,
+        Paint
     }
 
     public ItemType Type;
@@ -23,6 +24,8 @@ public class Item
                 return ItemAssets.Instance.Noodle;
             case ItemType.Tape:
                 return ItemAssets.Instance.Tape;
+            case ItemType.Paint:
+                return ItemAssets.Instance.Paint;
         }
 
         return null;
@@ -38,6 +41,8 @@ public class Item
                 return ItemAssets.Instance.NoodleObject;
             case ItemType.Tape:
                 return ItemAssets.Instance.TapeObject;
+            case ItemType.Paint:
+                return ItemAssets.Instance.PaintObject;
         }
 
         return null;
