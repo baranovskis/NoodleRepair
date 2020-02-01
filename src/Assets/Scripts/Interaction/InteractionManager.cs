@@ -48,6 +48,8 @@ public class InteractionManager : MonoBehaviour
                     FixPart(_raycaster.Hit.collider.gameObject);
                     break;
             }
+
+            _player.ArmsAnimator.SetTrigger("Punch");
         }
     }
 

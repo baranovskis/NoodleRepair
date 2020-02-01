@@ -8,7 +8,16 @@ public class Inventory
 	public delegate void ItemChanged(Item item);
 	public event ItemChanged OnItemChanged;
 
-	public Item ActiveItem;
+	private Item _activeItem;
+	public Item ActiveItem
+	{
+		get { return _activeItem; }
+		set
+		{
+			_activeItem = value;
+			OnItemChanged?.Invoke(_activeItem);
+		}
+	}
 
 	public Inventory()
 	{
@@ -31,8 +40,6 @@ public class Inventory
 				}
 			}
 		}
-
-		OnItemChanged?.Invoke(ActiveItem);
 		_items.Add(newItem);
 	}
 	
@@ -64,5 +71,41 @@ public class Inventory
 	public List<Item> GetItems()
 	{
 		return _items;
+	}
+
+	public bool SelectNextItem()
+	{
+		if (_items == null)
+			return false;
+
+		for (int i = 0; i < _items.Count; i++)
+		{
+			if (_items[i] == ActiveItem)
+			{
+				var index = (i + 1 > _items.Count - 1) ? 0 : i + 1;
+				ActiveItem = _items[index];
+				break;
+			}
+		}
+
+		return true;
+	}
+
+	public bool SelectPrevItem()
+	{
+		if (_items == null)
+			return false;
+
+		for (int i = 0; i < _items.Count - 1; i++)
+		{
+			if (_items[i] == ActiveItem)
+			{
+				var index = (i - 1 < 0) ? _items.Count - 1 : i - 1;
+				ActiveItem = _items[index];
+				break;
+			}
+		}
+
+		return true;
 	}
 }

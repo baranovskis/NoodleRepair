@@ -28,8 +28,6 @@ public class Player : MonoBehaviour
 
     private void _inventory_OnItemChanged(Item item)
     {
-        ArmsAnimator.SetTrigger("Punch");
-
         if (_activeItem != null)
         {
             Destroy(_activeItem);
