@@ -23,6 +23,12 @@ public class InventoryUI : MonoBehaviour
         DrawInventory();
     }
 
+    public void AddInventoryItem(Item item)
+    {
+        _inventory.AddItem(item);
+        DrawInventory();
+    }
+
     private void DrawInventory()
     {
         var items = _inventory.GetItems();

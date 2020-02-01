@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractionRayCaster : CameraRaycaster {
+public class InteractionRayCaster : CameraRaycaster
+{
 
     public delegate void TargetChanged();
     public event TargetChanged onTargetChange;
@@ -10,13 +11,18 @@ public class InteractionRayCaster : CameraRaycaster {
     public delegate void NoTarget();
     public event NoTarget onNoTarget;
 
+    public delegate void TargetHit();
+    public event TargetHit onTargetHit;
+
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         prevHit = currentHit;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         // normal every frame cast for object interaction
         if (ShootRay())
         {
@@ -26,10 +32,15 @@ public class InteractionRayCaster : CameraRaycaster {
                 onTargetChange();
             }
             prevHit = currentHit;
+
+            if (Input.GetButtonDown("Fire1"))
+            {
+                onTargetHit();
+            }
         }
         else
         {
-            if(onNoTarget != null) onNoTarget();
+            onNoTarget?.Invoke();
         }
     }
 
@@ -39,7 +50,7 @@ public class InteractionRayCaster : CameraRaycaster {
         // the viewport vector is in (x,y) with 0 being bottom and 1 top of the viewport.
         camAim = cam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0));
 
-        if (Physics.Raycast(camAim,cam.transform.forward ,out currentHit, rayRange))
+        if (Physics.Raycast(camAim, cam.transform.forward, out currentHit, rayRange))
         {
             return true;
         }
