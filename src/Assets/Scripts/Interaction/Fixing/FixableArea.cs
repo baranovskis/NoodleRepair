@@ -150,7 +150,29 @@ public class FixableArea : MonoBehaviour, IFixable
 
     private void DisplayPaintStage(int paintingStage)
     {
-        var noodle = NoodleStages[paintingStage - 1];
-        noodle.SetActive(true);
+        MeshRenderer mainMeshRenderer = gameObject
+            .GetComponent<MeshRenderer>();
+        Material mainMaterial = mainMeshRenderer.material;
+
+        float percent = (float)paintingStage / (float)_paintStageCount;
+
+        foreach (var noodle in NoodleStages)
+        {
+            if (noodle.activeSelf)
+            {
+                MeshRenderer meshRenderer
+                    = noodle.GetComponent<MeshRenderer>();
+
+                if (paintingStage == _paintStageCount)
+                {
+                    meshRenderer.material = mainMaterial;
+                }
+                else
+                {
+                    meshRenderer.material.color
+                        = mainMaterial.color * percent;
+                }
+            }
+        }
     }
 }

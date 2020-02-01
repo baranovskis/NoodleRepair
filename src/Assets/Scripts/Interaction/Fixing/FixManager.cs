@@ -15,18 +15,18 @@ public class FixManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     internal void FixArea(FixableArea fixableArea)
     {
-        switch(fixableArea.FixableObjectStage)
+        switch (fixableArea.FixableObjectStage)
         {
             case FixableObjectStage.Damaged:
                 {
@@ -65,14 +65,16 @@ public class FixManager : MonoBehaviour
         throw new NotImplementedException();
     }
 
-    internal void FixPart(FixablePart fixablePart)
-    {
-        throw new NotImplementedException();
-    }
-
     private void FixWithPainting(FixableArea fixableArea)
     {
-        throw new NotImplementedException();
+        var player = GetComponent<Player>();
+        if (player != null)
+        {
+            if (player.InventoryUI.GetActiveItem().Type == Item.ItemType.Paint)
+            {
+                fixableArea.FixWithPainting();
+            }
+        }
     }
 
     private void FixWithGrinding(FixableArea fixableArea)
@@ -80,7 +82,7 @@ public class FixManager : MonoBehaviour
         var player = GetComponent<Player>();
         if (player != null)
         {
-                fixableArea.FixWithGrinding();
+            fixableArea.FixWithGrinding();
         }
     }
 
@@ -89,16 +91,19 @@ public class FixManager : MonoBehaviour
         var player = GetComponent<Player>();
         if (player != null)
         {
-            var glue = player.InventoryUI.GetItem(Item.ItemType.Glue);
+            if (player.InventoryUI.GetActiveItem().Type == Item.ItemType.Glue)
+            {
+                var glue = player.InventoryUI.GetItem(Item.ItemType.Glue);
 
-            if (glue != null && glue.Amount > 0)
-            {
-                fixableArea.FixWithGlue();
-                player.InventoryUI.UseInventoryItem(glue);
-            }
-            else
-            {
-                // show noodle warning
+                if (glue != null && glue.Amount > 0)
+                {
+                    fixableArea.FixWithGlue();
+                    player.InventoryUI.UseInventoryItem(glue);
+                }
+                else
+                {
+                    // show noodle warning
+                }
             }
         }
     }
@@ -108,16 +113,19 @@ public class FixManager : MonoBehaviour
         var player = GetComponent<Player>();
         if (player != null)
         {
-            var noodle = player.InventoryUI.GetItem(Item.ItemType.Noodle);
+            if (player.InventoryUI.GetActiveItem().Type == Item.ItemType.Noodle)
+            {
+                var noodle = player.InventoryUI.GetItem(Item.ItemType.Noodle);
 
-            if (noodle != null && noodle.Amount > 0)
-            {
-                fixableArea.FixWithNoodles();
-                player.InventoryUI.UseInventoryItem(noodle);
-            }
-            else
-            {
-               // show noodle warning
+                if (noodle != null && noodle.Amount > 0)
+                {
+                    fixableArea.FixWithNoodles();
+                    player.InventoryUI.UseInventoryItem(noodle);
+                }
+                else
+                {
+                    // show noodle warning
+                }
             }
         }
     }
