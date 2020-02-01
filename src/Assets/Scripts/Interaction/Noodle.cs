@@ -12,8 +12,11 @@ public class Noodle : InteractableObject
         {
             var player = playerObject.GetComponent<Player>();
 
-            player.InventoryUI.AddInventoryItem(
-                new Item { Type = Item.ItemType.Noodle });
+            player.InventoryUI.AddInventoryItem(new Item
+            {
+                Type = Item.ItemType.Noodle,
+                IsStackable = true
+            });
         }
     }
 }

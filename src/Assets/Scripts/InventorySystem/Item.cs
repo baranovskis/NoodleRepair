@@ -5,7 +5,8 @@ public class Item
     public enum ItemType
     {
         Glue,
-        Noodle
+        Noodle,
+        Tape
     }
 
     public ItemType Type;
@@ -20,6 +21,8 @@ public class Item
                 return ItemAssets.Instance.Glue;
             case ItemType.Noodle:
                 return ItemAssets.Instance.Noodle;
+            case ItemType.Tape:
+                return ItemAssets.Instance.Tape;
         }
 
         return null;

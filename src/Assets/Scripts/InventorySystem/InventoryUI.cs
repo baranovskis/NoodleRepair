@@ -31,6 +31,18 @@ public class InventoryUI : MonoBehaviour
 
     private void DrawInventory()
     {
+        if (_itemContainer == null)
+            return;
+
+        foreach (Transform child in _itemContainer)
+        {
+            if (child != _itemTemplate)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
+
         var items = _inventory.GetItems();
         float pos = items.Count / 2f * -1f;
 
