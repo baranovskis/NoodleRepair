@@ -13,4 +13,5 @@ public class ItemAssets : MonoBehaviour
 
     public Sprite Glue;
     public Sprite Noodle;
+    public Sprite Tape;
 }
