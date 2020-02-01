@@ -6,32 +6,42 @@ using UnityEngine.UI;
 [System.Serializable]
 public struct CrosshairSize
 {
-    public Vector2 small;
-    public Vector2 medium;
-    public Vector2 big;
+    public Vector2 Small;
+    public Vector2 Medium;
+    public Vector2 Big;
 }
 
 
-public class Crosshair : MonoBehaviour {
+public class Crosshair : MonoBehaviour
+{
 
-    //Sprites
+    // Sprites
     [Header("Icons")]
-    [SerializeField] private Sprite pickUp;
-    [SerializeField] private Sprite note;
-    [SerializeField] private Sprite crosshair;
-    //crossHair image
+    [SerializeField]
+    private Sprite PickupSprite;
+    [SerializeField]
+    private Sprite InteractableObjectSprite;
+    [SerializeField]
+    private Sprite CrosshairSprite;
+    [SerializeField]
+    private Sprite FixableObjectSprite;
+
+    // Crosshair image
     private Image img;
-    public CrosshairSize crosshairSize = new CrosshairSize();
-    [SerializeField] private InteractionRayCaster _raycaster;
+    public CrosshairSize CrosshairSize = new CrosshairSize();
+
+    [SerializeField]
+    private InteractionRayCaster _raycaster;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         _raycaster = Camera.main.GetComponent<InteractionRayCaster>();
 
         _raycaster.onTargetChange += ChangeCrosshair;
         _raycaster.onNoTarget += ChangeCrosshair;
 
-        img = gameObject.GetComponent<Image>();        
+        img = gameObject.GetComponent<Image>();
     }
 
     private void OnDisable()
@@ -42,28 +52,32 @@ public class Crosshair : MonoBehaviour {
 
     void ChangeCrosshair()
     {
-        if(_raycaster.Hit.collider != null)
+        if (_raycaster.Hit.collider != null)
         {
             switch (_raycaster.Hit.collider.tag)
             {
-                case "pickUp":
-                    SetIcon(pickUp);
-                    SetSize(crosshairSize.medium);
+                case "Pickup":
+                    SetIcon(PickupSprite);
+                    SetSize(CrosshairSize.Medium);
                     break;
-                case "note":
-                    SetIcon(note);
-                    SetSize(crosshairSize.medium);
+                case "InteractableObject":
+                    SetIcon(InteractableObjectSprite);
+                    SetSize(CrosshairSize.Medium);
+                    break;
+                case "FixableObject":
+                    SetIcon(FixableObjectSprite);
+                    SetSize(CrosshairSize.Medium);
                     break;
                 default:
-                    SetIcon(crosshair);
-                    SetSize(crosshairSize.small);
+                    SetIcon(CrosshairSprite);
+                    SetSize(CrosshairSize.Medium);
                     break;
             }
         }
         else
         {
-            SetIcon(crosshair);
-            SetSize(crosshairSize.small);
+            SetIcon(CrosshairSprite);
+            SetSize(CrosshairSize.Medium);
             return;
         }
     }
