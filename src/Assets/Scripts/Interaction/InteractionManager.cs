@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.Interaction.Pickups;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -142,6 +143,14 @@ public class InteractionManager : MonoBehaviour
                 Type = Item.ItemType.Paint,
                 IsStackable = true
             });
+        }
+
+        var pickObj = gameObject.GetComponent<IPickupuble>();
+
+        if (pickObj != null)
+        {
+            var player = GetComponent<Player>();
+            player.TaskSystemUI.CountItem(pickObj);
         }
 
         //_player.ArmsAnimator.SetTrigger("Punch");
