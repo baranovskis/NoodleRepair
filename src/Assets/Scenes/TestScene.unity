@@ -1053,6 +1053,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80e724f28bbfb384fa9e5ff7a2ca9e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NormalSlot: {fileID: 21300000, guid: c593921ddb86756489651fc08876018b, type: 3}
+  ActiveSlot: {fileID: 21300000, guid: ebe043f0da287a04080407a796998e05, type: 3}
   ItemCellSize: 125
 --- !u!1 &765255089
 GameObject:
@@ -2806,12 +2808,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.26415092, g: 0.22303309, b: 0.22303309, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bf2faa3537349bb449c9378b175473c4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c593921ddb86756489651fc08876018b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

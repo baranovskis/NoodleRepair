@@ -9,12 +9,22 @@ public class InventoryUI : MonoBehaviour
     private Transform _itemContainer;
     private Transform _itemTemplate;
 
+    public Sprite NormalSlot;
+    public Sprite ActiveSlot;
+
     public float ItemCellSize = 75f;
 
     private void Awake()
     {
         _itemContainer = transform.Find("ItemContainer");
         _itemTemplate = _itemContainer.Find("ItemTemplate");
+
+        _inventory.OnItemChanged += _inventory_OnItemChanged;
+    }
+
+    private void _inventory_OnItemChanged(Item item)
+    {
+        DrawInventory();
     }
 
     public void Update()
@@ -75,6 +85,9 @@ public class InventoryUI : MonoBehaviour
 
             var icon = itemRect.Find("Icon").GetComponent<Image>();
             icon.sprite = item.GetSprite();
+
+            var bg = itemRect.Find("Bg").GetComponent<Image>();
+            bg.sprite = item == _inventory.ActiveItem ? ActiveSlot : NormalSlot;
 
             ++pos;
         }

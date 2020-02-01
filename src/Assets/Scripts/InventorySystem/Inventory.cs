@@ -96,7 +96,7 @@ public class Inventory
 		if (_items == null)
 			return false;
 
-		for (int i = 0; i < _items.Count - 1; i++)
+		for (int i = 0; i < _items.Count; i++)
 		{
 			if (_items[i] == ActiveItem)
 			{
