@@ -55,6 +55,12 @@ public class InventoryUI : MonoBehaviour
         DrawInventory();
     }
 
+    public void UseInventoryItem(Item item)
+    {
+        _inventory.UseItem(item);
+        DrawInventory();
+    }
+
     public Item GetItem(Item.ItemType itemType)
     {
         return _inventory.GetItem(itemType);

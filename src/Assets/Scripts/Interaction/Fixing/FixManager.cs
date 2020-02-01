@@ -92,14 +92,15 @@ public class FixManager : MonoBehaviour
         {
             var noodle = player.InventoryUI.GetItem(Item.ItemType.Noodle);
 
-            //if (noodle != null && noodle.Amount > 0)
-           // {
+            if (noodle != null && noodle.Amount > 0)
+            {
                 fixableArea.FixWithNoodles();
-           // }
-           // else
-           // {
-                // show noodle warning
-           // }
+                player.InventoryUI.UseInventoryItem(noodle);
+            }
+            else
+            {
+               // show noodle warning
+            }
         }
     }
 }

@@ -62,7 +62,7 @@ public class InteractionManager : MonoBehaviour
             var fixablePart = gameObject.GetComponent<FixablePart>();
             if (fixablePart != null)
             {
-                fixManager.FixPart(fixablePart);
+                fixManager.FixArea(fixablePart.FixableArea);
             }
         }
     }

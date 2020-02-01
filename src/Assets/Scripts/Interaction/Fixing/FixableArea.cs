@@ -7,8 +7,13 @@ public class FixableArea : MonoBehaviour
 {
     public FixableObjectStage FixableObjectStage { get; set; }
 
+    [SerializeField]
+    private GameObject[] NoodleStages;
+
+    [SerializeField]
+    private GameObject[] GrinderStages;
+
     private int _noodlesPerStage = 2;
-    private int _maximalNoodleCount = 10;
 
     private int _noodlesUsedCount = 0;
 
@@ -28,6 +33,8 @@ public class FixableArea : MonoBehaviour
     {
         if (FixableObjectStage == FixableObjectStage.Damaged)
         {
+            int noodleStageCount = NoodleStages.Length;
+
             _noodlesUsedCount++;
 
             if (_noodlesUsedCount % _noodlesPerStage == 0)
@@ -35,7 +42,7 @@ public class FixableArea : MonoBehaviour
                 DisplayNoodleStage(_noodlesUsedCount / _noodlesPerStage);
             }
 
-            if (_noodlesUsedCount >= _maximalNoodleCount)
+            if (_noodlesUsedCount >= noodleStageCount * _noodlesPerStage)
             {
                 FixableObjectStage = FixableObjectStage.FilledWithNoodles;
             }
@@ -44,18 +51,7 @@ public class FixableArea : MonoBehaviour
 
     private void DisplayNoodleStage(int noodleStage)
     {
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            Transform child = transform.GetChild(i);
-            if (child.tag == "FixablePart")
-            {
-                var fixablePart = child.GetComponent<FixablePart>();
-
-                if (fixablePart.FixOrder == noodleStage)
-                {
-                    child.gameObject.SetActive(true);
-                }
-            }
-        }
+        var noodle = NoodleStages[noodleStage - 1];
+        noodle.SetActive(true);
     }
 }
