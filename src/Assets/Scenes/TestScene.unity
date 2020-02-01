@@ -945,6 +945,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NoodleStages: []
+  FixableName: Shit
   GrinderStages: []
 --- !u!65 &677451997
 BoxCollider:
@@ -2125,6 +2126,7 @@ MonoBehaviour:
   - {fileID: 1749593656}
   - {fileID: 549624976}
   - {fileID: 982284710}
+  FixableName: Shitio
   GrinderStages:
   - {fileID: 915551703}
   - {fileID: 1749593656}

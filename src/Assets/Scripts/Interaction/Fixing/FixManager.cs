@@ -73,6 +73,11 @@ public class FixManager : MonoBehaviour
             if (player.InventoryUI.GetActiveItem().Type == Item.ItemType.Paint)
             {
                 fixableArea.FixWithPainting();
+
+                if (fixableArea.FixableObjectStage == FixableObjectStage.Painted)
+                {
+                    player.TaskSystemUI.CountFix(fixableArea);
+                }
             }
         }
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts.Interaction.Pickups
 {
-    interface IPickupuble
+    public interface IPickupuble
     {
         string Name { get; }
     }

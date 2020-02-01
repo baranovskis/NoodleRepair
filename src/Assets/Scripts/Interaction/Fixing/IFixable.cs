@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts.Interaction.Fixing
 {
-    interface IFixable
+    public interface IFixable
     {
         string Name { get; }
     }
