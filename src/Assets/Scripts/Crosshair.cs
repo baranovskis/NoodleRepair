@@ -68,6 +68,10 @@ public class Crosshair : MonoBehaviour
                     SetIcon(FixableObjectSprite);
                     SetSize(CrosshairSize.Medium);
                     break;
+                case "FixablePart":
+                    SetIcon(FixableObjectSprite);
+                    SetSize(CrosshairSize.Medium);
+                    break;
                 default:
                     SetIcon(CrosshairSprite);
                     SetSize(CrosshairSize.Medium);

@@ -23,7 +23,7 @@ public class InteractionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void InteractWithObject()
@@ -39,15 +39,43 @@ public class InteractionManager : MonoBehaviour
                     Interact(_raycaster.Hit.collider.gameObject);
                     break;
                 case "FixableObject":
-                    InitializeFix();
+                    InitiateFix(_raycaster.Hit.collider.gameObject);
+                    break;
+                case "FixablePart":
+                    FixPart(_raycaster.Hit.collider.gameObject);
                     break;
             }
         }
     }
 
-    private void InitializeFix()
+    private void FixPart(GameObject gameObject)
     {
+        var fixManager = GetComponent<FixManager>();
 
+        if (fixManager != null)
+        {
+            var fixablePart = gameObject.GetComponent<FixablePart>();
+            if (fixablePart != null)
+            {
+                fixManager.FixPart(fixablePart);
+            }
+        }
+    }
+
+    private void InitiateFix(GameObject gameObject)
+    {
+        var fixManager = GetComponent<FixManager>();
+
+        if (fixManager != null)
+        {
+            var fixableArea = gameObject.GetComponent<FixableArea>();
+            if (fixableArea != null)
+            {
+                var collider = gameObject.GetComponent<BoxCollider>();
+                collider.enabled = false;
+                fixManager.FixArea(fixableArea);
+            }
+        }
     }
 
     private void Interact(GameObject gameObject)
@@ -61,10 +89,40 @@ public class InteractionManager : MonoBehaviour
 
     private void Pickup(GameObject gameObject)
     {
-        var interactableObject = gameObject.GetComponent<InteractableObject>();
-        if (interactableObject != null)
+        var noodleObject = gameObject.GetComponent<Noodle>();
+        if (noodleObject != null)
         {
-            interactableObject.Interact();
+            var player = GetComponent<Player>();
+
+            player.InventoryUI.AddInventoryItem(new Item
+            {
+                Type = Item.ItemType.Noodle,
+                IsStackable = true
+            });
+        }
+
+        var glueObject = gameObject.GetComponent<Glue>();
+        if (glueObject != null)
+        {
+            var player = GetComponent<Player>();
+
+            player.InventoryUI.AddInventoryItem(new Item
+            {
+                Type = Item.ItemType.Glue,
+                IsStackable = true
+            });
+        }
+
+        var flexTapeObject = gameObject.GetComponent<FlexTape>();
+        if (flexTapeObject != null)
+        {
+            var player = GetComponent<Player>();
+
+            player.InventoryUI.AddInventoryItem(new Item
+            {
+                Type = Item.ItemType.Tape,
+                IsStackable = true
+            });
         }
     }
 }

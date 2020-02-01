@@ -4,7 +4,7 @@ using UnityEngine;
 public class Inventory 
 {
 	private readonly List<Item> _items;
-	
+
 	public Inventory()
 	{
 		_items = new List<Item>();
@@ -38,6 +38,18 @@ public class Inventory
 		}
 
 		_items.Remove(item);
+	}
+
+	public Item GetItem(Item.ItemType itemType)
+	{
+		foreach (var item in _items)
+		{
+			if (item.Type == itemType)
+			{
+				return item;
+			}
+		}
+		return null;
 	}
 
 	public List<Item> GetItems()
