@@ -31,6 +31,12 @@ public class Player : MonoBehaviour
         if (_activeItem != null)
         {
             Destroy(_activeItem);
+            _activeItem = null;
+        }
+
+        if (item == null)
+        {
+            return;
         }
 
         var obj = item.GetGameObject();

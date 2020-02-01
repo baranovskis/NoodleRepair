@@ -11,7 +11,7 @@ public class Item
 
     public ItemType Type;
     public bool IsStackable;
-    public int Amount;
+    public int Amount = 1;
 
     public Sprite GetSprite()
     {

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Inventory 
@@ -54,6 +55,11 @@ public class Inventory
 		}
 
 		_items.Remove(item);
+
+		if (item == ActiveItem)
+		{
+			OnItemChanged?.Invoke(_items.FirstOrDefault());
+		}
 	}
 
 	public Item GetItem(Item.ItemType itemType)

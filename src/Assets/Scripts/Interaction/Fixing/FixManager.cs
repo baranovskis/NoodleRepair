@@ -77,12 +77,30 @@ public class FixManager : MonoBehaviour
 
     private void FixWithGrinding(FixableArea fixableArea)
     {
-        throw new NotImplementedException();
+        var player = GetComponent<Player>();
+        if (player != null)
+        {
+                fixableArea.FixWithGrinding();
+        }
     }
 
-    private void FixWithGlue(FixableArea fixableObject)
+    private void FixWithGlue(FixableArea fixableArea)
     {
-        throw new NotImplementedException();
+        var player = GetComponent<Player>();
+        if (player != null)
+        {
+            var glue = player.InventoryUI.GetItem(Item.ItemType.Glue);
+
+            if (glue != null && glue.Amount > 0)
+            {
+                fixableArea.FixWithGlue();
+                player.InventoryUI.UseInventoryItem(glue);
+            }
+            else
+            {
+                // show noodle warning
+            }
+        }
     }
 
     private void FixWithNoodles(FixableArea fixableArea)
