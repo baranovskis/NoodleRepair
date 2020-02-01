@@ -70,7 +70,8 @@ public class FixManager : MonoBehaviour
         var player = GetComponent<Player>();
         if (player != null)
         {
-            if (player.InventoryUI.GetActiveItem().Type == Item.ItemType.Paint)
+            var activeItem = player.InventoryUI.GetActiveItem();
+            if (activeItem != null && activeItem.Type == Item.ItemType.Paint)
             {
                 fixableArea.FixWithPainting();
             }
@@ -91,7 +92,8 @@ public class FixManager : MonoBehaviour
         var player = GetComponent<Player>();
         if (player != null)
         {
-            if (player.InventoryUI.GetActiveItem().Type == Item.ItemType.Glue)
+            var activeItem = player.InventoryUI.GetActiveItem();
+            if (activeItem != null && activeItem.Type == Item.ItemType.Glue)
             {
                 var glue = player.InventoryUI.GetItem(Item.ItemType.Glue);
 
@@ -113,7 +115,8 @@ public class FixManager : MonoBehaviour
         var player = GetComponent<Player>();
         if (player != null)
         {
-            if (player.InventoryUI.GetActiveItem().Type == Item.ItemType.Noodle)
+            var activeItem = player.InventoryUI.GetActiveItem();
+            if (activeItem != null && activeItem.Type == Item.ItemType.Noodle)
             {
                 var noodle = player.InventoryUI.GetItem(Item.ItemType.Noodle);
 
