@@ -17,6 +17,22 @@ public class InventoryUI : MonoBehaviour
         _itemTemplate = _itemContainer.Find("ItemTemplate");
     }
 
+    public void Update()
+    {
+        if (Input.GetAxis("Mouse ScrollWheel") != 0)
+        {
+            if (Input.GetAxis("Mouse ScrollWheel") > 0)
+            {
+                _inventory.SelectNextItem();
+            }
+
+            if (Input.GetAxis("Mouse ScrollWheel") < 0)
+            {
+                _inventory.SelectPrevItem();
+            }
+        }
+    }
+
     public void SetInventory(Inventory inventory)
     {
         _inventory = inventory;
@@ -46,7 +62,6 @@ public class InventoryUI : MonoBehaviour
                 Destroy(child.gameObject);
             }
         }
-
 
         var items = _inventory.GetItems();
         float pos = items.Count / 2f * -1f;
