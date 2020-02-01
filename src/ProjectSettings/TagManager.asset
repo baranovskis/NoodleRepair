@@ -8,6 +8,7 @@ TagManager:
   - InteractableObject
   - Pickup
   - Hand
+  - FixablePart
   layers:
   - Default
   - TransparentFX
