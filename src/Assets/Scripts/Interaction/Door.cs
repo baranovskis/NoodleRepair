@@ -5,9 +5,15 @@ using UnityEngine;
 public class Door : InteractableObject
 {
     private bool _isOpen = false;
+    private bool _rotating = false;
 
     public override void Interact()
     {
+        if (_rotating)
+        {
+            return;
+        }
+
         _isOpen = !_isOpen;
 
         if (_isOpen)
@@ -22,6 +28,7 @@ public class Door : InteractableObject
 
     IEnumerator RotateMe(Vector3 byAngles, float inTime)
     {
+        _rotating = true;
         var fromAngle = transform.rotation;
         var toAngle = Quaternion.Euler(transform.eulerAngles + byAngles);
         for (var t = 0f; t < 1; t += Time.deltaTime / inTime)
@@ -29,6 +36,7 @@ public class Door : InteractableObject
             transform.rotation = Quaternion.Slerp(fromAngle, toAngle, t);
             yield return null;
         }
+        _rotating = false;
     }
 
     // Start is called before the first frame update

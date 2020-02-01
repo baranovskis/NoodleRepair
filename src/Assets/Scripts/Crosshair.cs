@@ -58,30 +58,30 @@ public class Crosshair : MonoBehaviour
             {
                 case "Pickup":
                     SetIcon(PickupSprite);
-                    SetSize(CrosshairSize.Medium);
+                    SetSize(CrosshairSize.Big);
                     break;
                 case "InteractableObject":
                     SetIcon(InteractableObjectSprite);
-                    SetSize(CrosshairSize.Medium);
+                    SetSize(CrosshairSize.Big);
                     break;
                 case "FixableObject":
                     SetIcon(FixableObjectSprite);
-                    SetSize(CrosshairSize.Medium);
+                    SetSize(CrosshairSize.Big);
                     break;
                 case "FixablePart":
                     SetIcon(FixableObjectSprite);
-                    SetSize(CrosshairSize.Medium);
+                    SetSize(CrosshairSize.Big);
                     break;
                 default:
                     SetIcon(CrosshairSprite);
-                    SetSize(CrosshairSize.Medium);
+                    SetSize(CrosshairSize.Big);
                     break;
             }
         }
         else
         {
             SetIcon(CrosshairSprite);
-            SetSize(CrosshairSize.Medium);
+            SetSize(CrosshairSize.Big);
             return;
         }
     }

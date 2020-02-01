@@ -74,8 +74,6 @@ public class InteractionManager : MonoBehaviour
             var fixableArea = gameObject.GetComponent<FixableArea>();
             if (fixableArea != null)
             {
-                var collider = gameObject.GetComponent<BoxCollider>();
-                collider.enabled = false;
                 fixManager.FixArea(fixableArea);
             }
         }

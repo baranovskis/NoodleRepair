@@ -92,21 +92,14 @@ public class FixManager : MonoBehaviour
         {
             var noodle = player.InventoryUI.GetItem(Item.ItemType.Noodle);
 
-            if (noodle!= null && noodle.Amount > 0)
-            {
-                SpawnNoodleControls(fixableArea);
-            } else
-            {
+            //if (noodle != null && noodle.Amount > 0)
+           // {
+                fixableArea.FixWithNoodles();
+           // }
+           // else
+           // {
                 // show noodle warning
-            }
+           // }
         }
-    }
-
-    private void SpawnNoodleControls(FixableArea fixableArea)
-    {
-        var noodle = Instantiate(NoodleModel,
-            transform.position + transform.forward * 5f, Quaternion.identity);
-
-        noodle.transform.parent = Camera.main.transform;
     }
 }
