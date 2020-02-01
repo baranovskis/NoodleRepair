@@ -5,6 +5,11 @@ public class Inventory
 {
 	private readonly List<Item> _items;
 
+	public delegate void ItemChanged(Item item);
+	public event ItemChanged OnItemChanged;
+
+	public Item ActiveItem;
+
 	public Inventory()
 	{
 		_items = new List<Item>();
@@ -12,18 +17,22 @@ public class Inventory
 	
 	public void AddItem(Item newItem)
 	{
+		ActiveItem = newItem;
+
 		if (newItem.IsStackable)
 		{
 			foreach (var item in _items)
 			{
 				if (item.Type == newItem.Type)
 				{
+					ActiveItem = item;
 					++item.Amount;
 					return;
 				}
 			}
 		}
 
+		OnItemChanged?.Invoke(ActiveItem);
 		_items.Add(newItem);
 	}
 	

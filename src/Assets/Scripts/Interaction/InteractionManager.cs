@@ -8,11 +8,14 @@ public class InteractionManager : MonoBehaviour
     [SerializeField]
     private InteractionRayCaster _raycaster;
 
+    private Player _player;
+
     void Start()
     {
         _raycaster = Camera.main.GetComponent<InteractionRayCaster>();
-
         _raycaster.onTargetHit += InteractWithObject;
+
+        _player = GetComponent<Player>();
     }
 
     private void OnDisable()
@@ -124,5 +127,7 @@ public class InteractionManager : MonoBehaviour
                 IsStackable = true
             });
         }
+
+        Destroy(_raycaster.Hit.collider.gameObject);
     }
 }

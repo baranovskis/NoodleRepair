@@ -27,4 +27,19 @@ public class Item
 
         return null;
     }
+
+    public GameObject GetGameObject()
+    {
+        switch (Type)
+        {
+            case ItemType.Glue:
+                return ItemAssets.Instance.GlueObject;
+            case ItemType.Noodle:
+                return ItemAssets.Instance.NoodleObject;
+            case ItemType.Tape:
+                return ItemAssets.Instance.TapeObject;
+        }
+
+        return null;
+    }
 }

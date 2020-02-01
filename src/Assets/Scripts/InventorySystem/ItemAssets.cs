@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ItemAssets : MonoBehaviour
 {
@@ -12,6 +10,11 @@ public class ItemAssets : MonoBehaviour
     }
 
     public Sprite Glue;
+    public GameObject GlueObject;
+
     public Sprite Noodle;
+    public GameObject NoodleObject;
+
     public Sprite Tape;
+    public GameObject TapeObject;
 }
