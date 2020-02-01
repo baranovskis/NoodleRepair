@@ -17,4 +17,7 @@ public class ItemAssets : MonoBehaviour
 
     public Sprite Tape;
     public GameObject TapeObject;
+
+    public Sprite Paint;
+    public GameObject PaintObject;
 }
