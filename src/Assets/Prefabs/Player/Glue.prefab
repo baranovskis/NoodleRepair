@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4411856314125866494}
   - component: {fileID: 7928172190539884807}
   - component: {fileID: 9165522682458803857}
-  - component: {fileID: 7072577193938878616}
   m_Layer: 0
   m_Name: Glue
   m_TagString: Pickup
@@ -94,16 +93,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8187e2721b2cad347b9c945ac18da6cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &7072577193938878616
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8519210253165829595}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.008749905, z: 0.036182784}
-  m_Center: {x: 0, y: 0.00026420323, z: 0.008091389}
