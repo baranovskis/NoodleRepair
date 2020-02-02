@@ -278,7 +278,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6367891161752907869}
   - component: {fileID: 7749299816215295266}
-  - component: {fileID: 6000806145744459959}
+  - component: {fileID: 5569561354160411803}
   m_Layer: 0
   m_Name: nudel sofa
   m_TagString: FixableObject
@@ -324,8 +324,8 @@ MonoBehaviour:
     type: 3}
   FixableName: Sofa
   GrinderStages: []
---- !u!64 &6000806145744459959
-MeshCollider:
+--- !u!65 &5569561354160411803
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -334,10 +334,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  serializedVersion: 2
+  m_Size: {x: 1.3024757, y: 1.2079518, z: 1.0882225}
+  m_Center: {x: -0.24576151, y: 0.29932487, z: 0.20165062}
 --- !u!1 &8534911280463320617
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,8 @@ TagManager:
   - TaskText
   - TaskTick
   - TaskCheckbox
+  - PauseCanvas
+  - ControlCanvas
   layers:
   - Default
   - TransparentFX

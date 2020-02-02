@@ -16,6 +16,8 @@ public class TaskSystem
 
 	public void FindObjects()
 	{
+		_tasks.Clear();
+
 		var pickups = GameObject.FindGameObjectsWithTag("Pickup");
 
 		foreach (var pickup in pickups)

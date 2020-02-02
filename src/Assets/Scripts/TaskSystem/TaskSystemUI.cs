@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.Interaction.Pickups;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TaskSystemUI : MonoBehaviour
@@ -19,6 +20,11 @@ public class TaskSystemUI : MonoBehaviour
     {
         _taskContainer = transform.Find("TaskContainer");
         _taskTemplate = _taskContainer.Find("TaskTemplate");
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        _taskSystem.FindObjects();
     }
 
     public void Update()
