@@ -18,6 +18,19 @@ public class TaskSystemUI : MonoBehaviour
         _taskTemplate = _taskContainer.Find("TaskTemplate");
     }
 
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            _taskContainer.gameObject.SetActive(true);
+        }
+
+        if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            _taskContainer.gameObject.SetActive(false);
+        }
+    }
+
     public void SetTaskSystem(TaskSystem task)
     {
         _taskSystem = task;
