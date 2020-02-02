@@ -7,6 +7,6 @@ public class OpenGame : MonoBehaviour
 {
     public void OpenGameOnClick()
     {
-        SceneManager.LoadScene("lvl1");
+        SceneManager.LoadScene("IntroScene");
     }
 }
