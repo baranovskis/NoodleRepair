@@ -128,7 +128,12 @@ public class TaskSystemUI : MonoBehaviour
 
     private void CheckTasks()
     {
-        var task = _taskSystem.GetTasks().FirstOrDefault(e => !e.IsChecked);
+        var tasks = _taskSystem.GetTasks();
+
+        if (tasks.Count < 1)
+            return;
+
+        var task = tasks.FirstOrDefault(e => !e.IsChecked);
 
         if (task != null)
             return;
