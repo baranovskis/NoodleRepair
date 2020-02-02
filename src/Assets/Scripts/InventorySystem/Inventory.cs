@@ -59,7 +59,7 @@ public class Inventory
 
 		if (item == ActiveItem)
 		{
-			OnItemChanged?.Invoke(_items.FirstOrDefault());
+			ActiveItem = _items.FirstOrDefault();
 		}
 	}
 

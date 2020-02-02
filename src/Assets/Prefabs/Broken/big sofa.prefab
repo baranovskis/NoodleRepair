@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3650262010149740916}
   - component: {fileID: 8634211082724805225}
-  - component: {fileID: 3809663536082042082}
+  - component: {fileID: 7372430114988183530}
   m_Layer: 0
   m_Name: big sofa
   m_TagString: FixableObject
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 356642186051375975}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 42.84, y: 0.000000074505806, z: -15.587503}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children:
   - {fileID: 6178681040482290234}
@@ -54,8 +54,8 @@ MonoBehaviour:
   - {fileID: 8393345149317933247}
   FixableName: Sofa
   GrinderStages: []
---- !u!64 &3809663536082042082
-MeshCollider:
+--- !u!65 &7372430114988183530
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -64,10 +64,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.99024117, y: 0.48766065, z: 0.42910814}
+  m_Center: {x: -0.4928215, y: 0.22689307, z: 0.20249581}
 --- !u!1 &4212711168851499208
 GameObject:
   m_ObjectHideFlags: 0

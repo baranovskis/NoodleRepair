@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3054270057984695162}
   - component: {fileID: 733722678531070323}
-  - component: {fileID: 4047232461742140037}
+  - component: {fileID: 1176004399585394207}
   m_Layer: 0
   m_Name: bath
   m_TagString: FixableObject
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2033845511649028457}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 40.77825, y: 1.1171644, z: -4.386501}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 3465007985370360996}
@@ -58,8 +58,8 @@ MonoBehaviour:
   - {fileID: 2230561004387234971}
   FixableName: Bath
   GrinderStages: []
---- !u!64 &4047232461742140037
-MeshCollider:
+--- !u!65 &1176004399585394207
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -68,10 +68,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  serializedVersion: 2
+  m_Size: {x: 6.4670315, y: 1.9407549, z: 3.0945125}
+  m_Center: {x: -0.03549719, y: -0.1863761, z: 0.26625246}
 --- !u!1 &2230561004387234971
 GameObject:
   m_ObjectHideFlags: 0

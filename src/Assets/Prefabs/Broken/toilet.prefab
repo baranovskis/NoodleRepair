@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2877757657842366789}
   - component: {fileID: 83537932943210454}
-  - component: {fileID: 1861459196938670052}
+  - component: {fileID: 8820288682639982959}
   m_Layer: 0
   m_Name: toilet
   m_TagString: Untagged
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1275785946906512214}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.175478, y: 0.000000029802322, z: -24.728428}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 1911218461607843656}
@@ -57,8 +57,8 @@ MonoBehaviour:
   - {fileID: 3545593933613124251}
   FixableName: Toilet
   GrinderStages: []
---- !u!64 &1861459196938670052
-MeshCollider:
+--- !u!65 &8820288682639982959
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -67,10 +67,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.3126255, y: 0.48674145, z: 0.40468985}
+  m_Center: {x: -0.14987803, y: 0.23677321, z: 0.18986543}
 --- !u!1 &3545593933613124251
 GameObject:
   m_ObjectHideFlags: 0
