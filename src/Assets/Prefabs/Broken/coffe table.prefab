@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 4449294092791540408}
   - component: {fileID: 8702544004250386862}
   - component: {fileID: 6839379308919612515}
+  - component: {fileID: 2801418592700944799}
   m_Layer: 0
   m_Name: coffe table
   m_TagString: FixableObject
@@ -162,6 +163,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!65 &2801418592700944799
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856889816456075435}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8523636, y: 0.333176, z: 0.46358833}
+  m_Center: {x: -0.4207634, y: 0.1611696, z: 0.2239149}
 --- !u!1 &7586479903828991560
 GameObject:
   m_ObjectHideFlags: 0
