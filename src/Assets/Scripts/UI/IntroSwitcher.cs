@@ -6,9 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class IntroSwitcher : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject BallObject;
+
     void Start()
     {
-        StartCoroutine(Timer(5f, Method));
+        StartCoroutine(Timer(11f, Method));
     }
     void Method()
     {
@@ -19,9 +22,20 @@ public class IntroSwitcher : MonoBehaviour
     {
         float time = timer;
 
+        bool needsBall = false;
+
         while (time > 0)   // Wait
         {
             time -= Time.deltaTime;
+
+            if (time <= 6 && !needsBall)
+            {
+                needsBall = true;
+                BallObject.SetActive(true);
+                var animator = BallObject.GetComponent<SpriteAnimator>();
+                animator.Activate();
+            }
+
             yield return null;
         }
 

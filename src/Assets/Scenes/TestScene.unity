@@ -945,6 +945,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NoodleStages: []
+  MainMaterial: {fileID: 0}
   FixableName: Shit
   GrinderStages: []
 --- !u!65 &677451997
@@ -1401,6 +1402,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2272025496479695779, guid: 4819f29c07138e84493fa8cb1460e944,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2337559274548965178, guid: 4819f29c07138e84493fa8cb1460e944,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4221898643463343992, guid: 4819f29c07138e84493fa8cb1460e944,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -2042,6 +2053,7 @@ MonoBehaviour:
   - {fileID: 1749593656}
   - {fileID: 549624976}
   - {fileID: 982284710}
+  MainMaterial: {fileID: 0}
   FixableName: Shitio
   GrinderStages:
   - {fileID: 915551703}
