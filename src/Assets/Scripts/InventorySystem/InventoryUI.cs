@@ -100,6 +100,9 @@ public class InventoryUI : MonoBehaviour
             var bg = itemRect.Find("Bg").GetComponent<Image>();
             bg.sprite = item == _inventory.ActiveItem ? ActiveSlot : NormalSlot;
 
+            var amount = itemRect.Find("Text").GetComponent<Text>();
+            amount.text = item.Amount > 1 ? item.Amount.ToString() : "";
+
             ++pos;
         }
     }
