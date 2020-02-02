@@ -9,10 +9,13 @@ public class SceneSwitcher : MonoBehaviour
 
     private int _currentSceneIndex = 0;
 
-    public string[] Scenes = new[]
+    private string[] _scenes = new[]
     {
         "lvl1",
-        "lvl2"
+        "lvl2",
+        "lvl3",
+        "lvl4",
+        "lvl5"
     };
 
     void Awake()
@@ -27,16 +30,16 @@ public class SceneSwitcher : MonoBehaviour
 
     public void LoadNextScene()
     {
-        if (_currentSceneIndex < Scenes.Length - 1)
+        if (_currentSceneIndex < _scenes.Length - 1)
         {
-            string sceneToLoad = Scenes[_currentSceneIndex + 1];
+            string sceneToLoad = _scenes[_currentSceneIndex + 1];
             _currentSceneIndex++;
 
             SceneManager.LoadScene(sceneToLoad);
         }
         else
         {
-
+            SceneManager.LoadScene("EndingScene");
         }
     }
 }
