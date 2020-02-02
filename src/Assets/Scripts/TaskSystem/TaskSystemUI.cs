@@ -9,6 +9,9 @@ public class TaskSystemUI : MonoBehaviour
     private Transform _taskContainer;
     private Transform _taskTemplate;
 
+    public AudioSource AudioSource;
+    public AudioClip SuccessClip;
+
     public float MergeY = -39.0f;
     public float ItemCellSize = 18.5f;
 
@@ -119,5 +122,22 @@ public class TaskSystemUI : MonoBehaviour
 
             ++pos;
         }
+
+        CheckTasks();
+    }
+
+    private void CheckTasks()
+    {
+        var task = _taskSystem.GetTasks().FirstOrDefault(e => !e.IsChecked);
+
+        if (task != null)
+            return;
+
+        if (!AudioSource.isPlaying)
+        {
+            AudioSource.PlayOneShot(SuccessClip);
+        }
+
+        SceneSwitcher.instance.LoadNextScene();
     }
 }
