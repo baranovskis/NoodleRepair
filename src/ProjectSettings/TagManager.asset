@@ -14,6 +14,7 @@ TagManager:
   - TaskCheckbox
   - PauseCanvas
   - ControlCanvas
+  - BallAnimation
   layers:
   - Default
   - TransparentFX
