@@ -6,11 +6,15 @@ public class Player : MonoBehaviour
 {
     public InventoryUI InventoryUI;
 
+    public TaskSystemUI TaskSystemUI;
+
     public Transform HoldItemPosition;
 
     public Animator ArmsAnimator;
 
     private Inventory _inventory;
+
+    private TaskSystem _taskSystem;
 
     private FPMovementController _movementController;
 
@@ -20,8 +24,10 @@ public class Player : MonoBehaviour
     {
         _inventory = new Inventory();
         _inventory.OnItemChanged += _inventory_OnItemChanged;
-
         InventoryUI.SetInventory(_inventory);
+
+        _taskSystem = new TaskSystem();
+        TaskSystemUI.SetTaskSystem(_taskSystem);
 
         _movementController = GetComponent<FPMovementController>();
     }

@@ -1,14 +1,29 @@
-﻿using System;
+﻿using Assets.Scripts.Interaction.Fixing;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FixableArea : MonoBehaviour
+public class FixableArea : MonoBehaviour, IFixable
 {
     public FixableObjectStage FixableObjectStage { get; set; }
 
     [SerializeField]
     private GameObject[] NoodleStages;
+
+    [SerializeField]
+    private Material MainMaterial;
+
+    public string Name
+    {
+        get
+        {
+            return FixableName;
+        }
+    }
+
+    [SerializeField]
+    private string FixableName;
 
     private int _noodlesPerStage = 1;
     private int _noodlesUsedCount = 0;
@@ -138,10 +153,6 @@ public class FixableArea : MonoBehaviour
 
     private void DisplayPaintStage(int paintingStage)
     {
-        MeshRenderer mainMeshRenderer = gameObject
-            .GetComponent<MeshRenderer>();
-        Material mainMaterial = mainMeshRenderer.material;
-
         float percent = (float)paintingStage / (float)_paintStageCount;
 
         foreach (var noodle in NoodleStages)
@@ -153,12 +164,12 @@ public class FixableArea : MonoBehaviour
 
                 if (paintingStage == _paintStageCount)
                 {
-                    meshRenderer.material = mainMaterial;
+                    meshRenderer.material = MainMaterial;
                 }
                 else
                 {
                     meshRenderer.material.color
-                        = mainMaterial.color * percent;
+                        = MainMaterial.color * percent;
                 }
             }
         }
