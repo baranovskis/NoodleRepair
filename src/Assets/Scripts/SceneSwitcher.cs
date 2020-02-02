@@ -24,4 +24,19 @@ public class SceneSwitcher : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
     }
+
+    public void LoadNextScene()
+    {
+        if (_currentSceneIndex < Scenes.Length - 1)
+        {
+            string sceneToLoad = Scenes[_currentSceneIndex + 1];
+            _currentSceneIndex++;
+
+            SceneManager.LoadScene(sceneToLoad);
+        }
+        else
+        {
+
+        }
+    }
 }
