@@ -73,7 +73,11 @@ public class FixManager : MonoBehaviour
             var activeItem = player.InventoryUI.GetActiveItem();
             if (activeItem != null && activeItem.Type == Item.ItemType.Paint)
             {
+                var paint = player.InventoryUI.GetItem(Item.ItemType.Paint);
+
                 fixableArea.FixWithPainting();
+
+                player.InventoryUI.UseInventoryItem(paint);
 
                 if (fixableArea.FixableObjectStage == FixableObjectStage.Painted)
                 {
