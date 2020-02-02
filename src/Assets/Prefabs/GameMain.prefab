@@ -532,6 +532,12 @@ PrefabInstance:
       propertyPath: TaskSystemUI
       value: 
       objectReference: {fileID: 664983717650531770}
+    - target: {fileID: 2088504222426939578, guid: f19d4ec7769396545a2da3b772494655,
+        type: 3}
+      propertyPath: NoodleModel
+      value: 
+      objectReference: {fileID: 5727662006669484795, guid: 5f5e6175f20985040b32bd0f7c8849b6,
+        type: 3}
     - target: {fileID: 2088504222426939585, guid: f19d4ec7769396545a2da3b772494655,
         type: 3}
       propertyPath: m_Name
@@ -760,6 +766,18 @@ PrefabInstance:
       propertyPath: GlueObject
       value: 
       objectReference: {fileID: 8519210253165829595, guid: 6c980be02e054f84d982f26f681aa77e,
+        type: 3}
+    - target: {fileID: 9104296642437049759, guid: 8946c9866bd16544eb5551b4bdd7af52,
+        type: 3}
+      propertyPath: NoodleObject
+      value: 
+      objectReference: {fileID: 5727662006669484795, guid: 5f5e6175f20985040b32bd0f7c8849b6,
+        type: 3}
+    - target: {fileID: 9104296642437049759, guid: 8946c9866bd16544eb5551b4bdd7af52,
+        type: 3}
+      propertyPath: TapeObject
+      value: 
+      objectReference: {fileID: 7041492449322610371, guid: 4f4f7cb2cfb3f084e98dcbff093aa6af,
         type: 3}
     - target: {fileID: 9104296642701473202, guid: 8946c9866bd16544eb5551b4bdd7af52,
         type: 3}
