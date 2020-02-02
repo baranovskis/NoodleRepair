@@ -227,6 +227,8 @@ MonoBehaviour:
   - {fileID: 7932421112866686861}
   - {fileID: 7783551093304656058}
   - {fileID: 3024200916659640267}
+  MainMaterial: {fileID: -6867524174320841699, guid: d590fa98bf59faa4694c523f0d876326,
+    type: 3}
   FixableName: Laptop
   GrinderStages: []
 --- !u!65 &8725229663431499622

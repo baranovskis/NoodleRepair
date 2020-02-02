@@ -229,6 +229,8 @@ MonoBehaviour:
   - {fileID: 5869593727726678595}
   - {fileID: 5857152660060295318}
   - {fileID: 150428683109965511}
+  MainMaterial: {fileID: -3963241562183589234, guid: 4d066df8d3f8a9649b84f80e6e0be818,
+    type: 3}
   FixableName: Wall
   GrinderStages:
   - {fileID: 5857152660060295318}

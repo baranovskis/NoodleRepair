@@ -52,6 +52,8 @@ MonoBehaviour:
   - {fileID: 6736318861843370558}
   - {fileID: 8048745081453248570}
   - {fileID: 8393345149317933247}
+  MainMaterial: {fileID: 7887957717227282328, guid: 140508226ebb191468c281699ccbbe4f,
+    type: 3}
   FixableName: Sofa
   GrinderStages: []
 --- !u!65 &7372430114988183530

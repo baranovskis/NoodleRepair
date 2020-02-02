@@ -11,6 +11,9 @@ public class FixableArea : MonoBehaviour, IFixable
     [SerializeField]
     private GameObject[] NoodleStages;
 
+    [SerializeField]
+    private Material MainMaterial;
+
     public string Name
     {
         get
@@ -150,10 +153,6 @@ public class FixableArea : MonoBehaviour, IFixable
 
     private void DisplayPaintStage(int paintingStage)
     {
-        MeshRenderer mainMeshRenderer = gameObject
-            .GetComponent<MeshRenderer>();
-        Material mainMaterial = mainMeshRenderer.material;
-
         float percent = (float)paintingStage / (float)_paintStageCount;
 
         foreach (var noodle in NoodleStages)
@@ -165,12 +164,12 @@ public class FixableArea : MonoBehaviour, IFixable
 
                 if (paintingStage == _paintStageCount)
                 {
-                    meshRenderer.material = mainMaterial;
+                    meshRenderer.material = MainMaterial;
                 }
                 else
                 {
                     meshRenderer.material.color
-                        = mainMaterial.color * percent;
+                        = MainMaterial.color * percent;
                 }
             }
         }

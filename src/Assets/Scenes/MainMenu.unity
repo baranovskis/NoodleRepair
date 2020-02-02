@@ -1800,6 +1800,7 @@ MonoBehaviour:
   - {fileID: 1908993694}
   - {fileID: 203728182}
   - {fileID: 14865649}
+  MainMaterial: {fileID: 0}
   FixableName: 
   GrinderStages: []
 --- !u!65 &257468830
@@ -17714,6 +17715,7 @@ GameObject:
   - component: {fileID: 2087074487}
   - component: {fileID: 2087074486}
   - component: {fileID: 2087074485}
+  - component: {fileID: 2087074489}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -17809,6 +17811,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2087074489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087074484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c705a97f7d85f240a07b5ac1a1fdae3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2095258416 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: d5b11b59da9921942a7d5937b488e2fe,

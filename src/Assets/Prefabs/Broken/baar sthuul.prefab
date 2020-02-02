@@ -272,6 +272,8 @@ MonoBehaviour:
   - {fileID: 3318762128182068432}
   - {fileID: 320255577726038678}
   - {fileID: 5030376280845012214}
+  MainMaterial: {fileID: 7887957717227282328, guid: bb3862290cc81bf42a675ef03e77d0db,
+    type: 3}
   FixableName: Bar chair
   GrinderStages: []
 --- !u!65 &942767693184392181

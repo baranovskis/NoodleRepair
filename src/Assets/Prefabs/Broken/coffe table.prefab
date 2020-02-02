@@ -144,6 +144,8 @@ MonoBehaviour:
   NoodleStages:
   - {fileID: 7586479903828991560}
   - {fileID: 564007032320246598}
+  MainMaterial: {fileID: -8067726398312463513, guid: a403662259379064da31e1892df68e77,
+    type: 3}
   FixableName: Table
   GrinderStages: []
 --- !u!64 &6839379308919612515

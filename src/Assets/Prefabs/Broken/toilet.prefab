@@ -55,6 +55,8 @@ MonoBehaviour:
   - {fileID: 8860110589922318347}
   - {fileID: 5204959346672175631}
   - {fileID: 3545593933613124251}
+  MainMaterial: {fileID: -1400836625916889992, guid: 5c5f03c6b584df641913e421273e8563,
+    type: 3}
   FixableName: Toilet
   GrinderStages: []
 --- !u!65 &8820288682639982959

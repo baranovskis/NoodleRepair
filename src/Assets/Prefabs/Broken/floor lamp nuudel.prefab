@@ -383,6 +383,8 @@ MonoBehaviour:
   - {fileID: 3923898851642241766}
   - {fileID: 6408388177079988200}
   - {fileID: 3178712940562853813}
+  MainMaterial: {fileID: -2138252962470926213, guid: e1b98ed7929aad74083273813134df79,
+    type: 3}
   FixableName: Lamp
   GrinderStages: []
 --- !u!65 &57847380205787890

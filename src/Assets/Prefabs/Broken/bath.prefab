@@ -56,6 +56,8 @@ MonoBehaviour:
   - {fileID: 5664157733510330380}
   - {fileID: 3175232177141978290}
   - {fileID: 2230561004387234971}
+  MainMaterial: {fileID: -407617382302988920, guid: 67084354c81dd914aa2bf179cc335ff1,
+    type: 3}
   FixableName: Bath
   GrinderStages: []
 --- !u!65 &1176004399585394207
